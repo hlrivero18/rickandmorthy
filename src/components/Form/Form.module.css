@@ -1,0 +1,31 @@
+.container{
+   display: flex;
+   justify-content: center;
+}
+
+.containerForm{
+    background-color: #435055;
+    display: grid;
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    color: white;
+}
+
+.formImg{
+    width: 100%;
+}
+
+.formLabel{
+    border: 3px solid red;
+}
+
+.formButton{
+    background-color: #537FE7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 2em;
+    font-size: 16px;
+    margin: 10px;
+}

@@ -25,15 +25,28 @@ export default function Form({login}) {
     return (
         <div className={style.container}>
             <form className={style.containerForm} action="" onSubmit={handleLogin}>
-                <img className={style.formImg} src="https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png" alt="" />
+                <h3>Bienvenido!!</h3>
+                <img className={style.formImg} src="https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png" alt="rick-y-morthy" />
                 <div>
-                    <label htmlFor="email"> Email</label>
-                    <input type="text" value={userData.email} name="email" placeholder="Email..." onChange={handleChange} />
+                    {/* <label htmlFor="email"> Email</label> */}
+                    <input 
+                    className={style.formInput} 
+                    type="text" value={userData.email} 
+                    name="email" 
+                    placeholder=" Ingresa tu email" 
+                    onChange={handleChange} 
+                    autoComplete="off"/>
                     {errors.email && <span>{errors.email}</span>}
                 </div>
                 <div>
-                    <label htmlFor="password">Contraseña</label>
-                    <input type='password' value={userData.password} name="password" placeholder="contraseña..." onChange={handleChange} />
+                    {/* <label htmlFor="password">Contraseña</label> */}
+                    <input 
+                    className={style.formInput} 
+                    type='password' 
+                    value={userData.password} 
+                    name="password" 
+                    placeholder="Ingresa tu contraseña" 
+                    onChange={handleChange} />
                     {errors.password && <span>{errors.password}</span>}
                 </div>
 

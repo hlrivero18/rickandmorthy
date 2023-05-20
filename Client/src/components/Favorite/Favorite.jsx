@@ -11,19 +11,19 @@ function Favorite(props) {
     const { myFavorites } = props
     const dispatch = useDispatch()
 
-    const handleOrder = (event) =>{
-        const {value} = event.target;
+    const handleOrder = (event) => {
+        const { value } = event.target;
         dispatch(orderCards(value))
         setAux(true)
     }
 
     const handleFilter = (event) => {
-        const {value} = event.target;
+        const { value } = event.target;
         dispatch(filterCards(value))
     }
 
     return (
-        <div className={style.container}>
+        <div className={style.containerAll}>
             <select onChange={handleOrder}>
                 <option value="A">Ascendente</option>
                 <option value="D">Descendente</option>
@@ -34,18 +34,22 @@ function Favorite(props) {
                 <option value="Genderless">Genderless</option>
                 <option value="unknown">unknown</option>
             </select>
-            {myFavorites.map((personaje) =>
-                <Card
-                    key={personaje.id}
-                    id={personaje.id}
-                    name={personaje.name}
-                    status={personaje.status}
-                    species={personaje.species}
-                    image={personaje.image}
-                >
-                </Card>
-            )}
+            <div className={style.container}>
+
+                {myFavorites.map((personaje) =>
+                    <Card
+                        key={personaje.id}
+                        id={personaje.id}
+                        name={personaje.name}
+                        status={personaje.status}
+                        species={personaje.species}
+                        image={personaje.image}
+                    >
+                    </Card>
+                )}
+            </div>
         </div>
+
     )
 }
 

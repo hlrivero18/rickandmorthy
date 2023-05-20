@@ -16,8 +16,14 @@
     width: 100%;
 }
 
-.formLabel{
-    border: 3px solid red;
+.formInput{
+    background-color: #2c3538;
+    height: 2em;
+    font-size: 16px;
+    margin: 5px;
+    width: 90%;
+    border: none;
+    color:white
 }
 
 .formButton{
@@ -28,4 +34,5 @@
     height: 2em;
     font-size: 16px;
     margin: 10px;
+    cursor: pointer;
 }

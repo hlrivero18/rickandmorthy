@@ -1,4 +1,5 @@
 import {ADD_FAV, REMOVE_FAV, FILTER_CARDS, ORDER_CARDS} from './action-types';
+
 const initialState = {
     myFavorites: [],
     allCharacters: []
@@ -24,12 +25,12 @@ const rootReducer = (state = initialState, action)=>{
             return {
                 ...state,
                 myFavorites: copy1.filter(character => {
-                    return character.gender == action.payload
+                    return character.gender === action.payload
                 })
             }
         case ORDER_CARDS:
             let copy2 = state.allCharacters;
-            if(action.payload.toUpperCase() == 'A'){
+            if(action.payload === 'A'){
                 return{
                     ...state,
                     myFavorites: copy2.sort(function(a, b){
@@ -37,7 +38,7 @@ const rootReducer = (state = initialState, action)=>{
                     })
                 }
             }
-            else if(action.payload.toUpperCase() == 'D'){
+            else if(action.payload === 'D'){
                 return{
                     ...state,
                     myFavorites: copy2.sort(function(a, b){

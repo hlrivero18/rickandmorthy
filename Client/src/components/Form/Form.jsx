@@ -18,7 +18,6 @@ export default function Form({login}) {
     }
     const handleLogin = (event)=>{
         event.preventDefault();
-        console.log('click')
         login(userData)
     }
 

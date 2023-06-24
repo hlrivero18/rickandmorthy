@@ -3,6 +3,7 @@ const express = require('express');
 const server = express();
 const PORT = 3001;
 const json = express.json()
+const { conn } = require('./DB_connection')
 
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -22,7 +23,8 @@ server.use(json)
 
 server.use('/rickandmorty', routes)
 
-
-server.listen(PORT, () => {
-    console.log('Server raised in port ' + PORT)
-})
+conn.sync({ force: false }).then(() =>
+    server.listen(PORT, () => {
+        console.log('Server raised in port ' + PORT)
+    })
+)
